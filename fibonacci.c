@@ -14,7 +14,7 @@ void main(void)
     printf("Fibonacci Sequence\n");
     printf("==================\n\n");
 
-    for( i=0 ; i < MAX; i++){	
+    for(i=0 ; i<MAX; i++){	
         if (i==0) current = 0;
        else if (i==1) current = 1;
        else {
