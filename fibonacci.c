@@ -1,11 +1,11 @@
-/* Fibonacci Sequence
+/* Fibonacci Sequence.
 The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... The next number is found by adding up the two numbers before it.
 Copyright (C) 2015 Carlos de la Calleja, carlosdelacalleja@gmail.com */
 
 #include <stdio.h>
 #define MAX 6   /* maximum numbers in the sequence */
 
-void main(void)
+main()
 {
 
     /* var declarations:  a2 is the second before, a1 is the first before, and current is the actual sequence item */
