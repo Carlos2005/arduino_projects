@@ -12,7 +12,7 @@ void main(void)
     int i, current, a2=0, a1=1; 
 
     printf("Fibonacci Sequence\n");
-    printf("==================\n\n");
+    printf("==================\n");
 
     for(i=0 ; i<MAX; i++){	
         if (i==0) current = 0;
@@ -22,7 +22,9 @@ void main(void)
              a2 = a1;                     /* set the second before the to first before */
              a1 = current;                 /* set the first before the to the current */
              }
-        printf("item number %i = ",i+1); 
+        printf("number %i : ",i+1); 
         printf("%i \n",current); 
      }	
+    printf("============================\n");
+    printf("%i items printed successfully", MAX);
  }
