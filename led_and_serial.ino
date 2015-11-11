@@ -1,6 +1,6 @@
 // (c) 2015, Carlos de la Calleja
 
-// led set to Pin 13 inbuild led, fla and byterecived 
+// led set to Pin 13 inbuild led, flag and byte received 
 int flag = 0, led = 13, ByteReceived;
 
 // the setup routine runs once when you press reset:
