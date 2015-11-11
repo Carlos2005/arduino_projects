@@ -9,17 +9,13 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  
-
   if (!flag){
      digitalWrite(led, HIGH);   // turn off the LED only once 
      flag++; }
   
   while (Serial.available() > 0) {   //check if data is incoming from the  serial monitor
      ByteReceived = Serial.read(); // read the byte
-    
      if (ByteReceived == '1') digitalWrite(led, HIGH);
      if (ByteReceived == '0') digitalWrite(led, LOW);
   }  
-  
 }
