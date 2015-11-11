@@ -15,7 +15,7 @@ void loop() {
   
 {
   if (!flag){
-     digitalWrite(led, LOW);   // turn the LED off only once (HIGH is the voltage level)
+     digitalWrite(led, LOW);   // turn the LED off only once 
      flag++; }
   
   if (Serial.available()) {
