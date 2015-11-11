@@ -1,28 +1,25 @@
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
-int flag=0, led = 13, inByte;
-
+// led set to Pin 13 inbuild led, fla and byterecived 
+int flag = 0, led = 13, ByteReceived;
 
 // the setup routine runs once when you press reset:
-void setup() {
-  // initialize the digital pin as an output.
-  pinMode(led, OUTPUT);
+void setup() {  							
+  pinMode(led, OUTPUT);  // initialize the digital pin as an output.
   Serial.begin(9600);  //set the serial port
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   
-{
+
   if (!flag){
-     digitalWrite(led, LOW);   // turn the LED off only once 
+     digitalWrite(led, HIGH);   // turn off the LED only once 
      flag++; }
   
-  if (Serial.available()) {
-    inByte = Serial.read();
-    if ( inByte == 1) digitalWrite(led, HIGH)
-    else if  inByte == 0) digitalWrite(led, LOW)
-
-  }
+  while (Serial.available() > 0) {   //check if data is incoming from the  serial monitor
+     ByteReceived = Serial.read(); // read the byte
+    
+     if (ByteReceived == '1') digitalWrite(led, HIGH);
+     if (ByteReceived == '0') digitalWrite(led, LOW);
+  }  
   
 }
