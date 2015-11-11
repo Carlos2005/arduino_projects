@@ -1,3 +1,5 @@
+// (c) 2015, Carlos de la Calleja
+
 // led set to Pin 13 inbuild led, fla and byterecived 
 int flag = 0, led = 13, ByteReceived;
 
