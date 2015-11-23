@@ -34,17 +34,24 @@ int sensorValue = 0;  // variable to store the value coming from the sensor
 void setup() {
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);  
 }
 
 void loop() {
   // read the value from the sensor:
   sensorValue = analogRead(sensorPin);
   // turn the ledPin on
-  digitalWrite(ledPin, HIGH);
+  Serial.println(sensorValue);
+  
+  if (sensorValue < 300) tone(8,1000);
+  else noTone(8);
+  
+  
+  //digitalWrite(ledPin, HIGH);
   // stop the program for <sensorValue> milliseconds:
-  delay(sensorValue);
+  //delay(sensorValue);
   // turn the ledPin off:
-  digitalWrite(ledPin, LOW);
+  //digitalWrite(ledPin, LOW);
   // stop the program for for <sensorValue> milliseconds:
-  delay(sensorValue);
+  //delay(sensorValue);
 }
