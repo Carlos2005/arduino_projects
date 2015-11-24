@@ -1,57 +1,32 @@
 /*
-  Analog Input
- Demonstrates analog input by reading an analog sensor on analog pin 0 and
- turning on and off a light emitting diode(LED)  connected to digital pin 13.
- The amount of time the LED will be on and off depends on
- the value obtained by analogRead().
+Arduino connected to a photoresistor and a piezo buzzer. 
 
- The circuit:
- * Potentiometer attached to analog input 0
- * center pin of the potentiometer to the analog pin
- * one side pin (either one) to ground
- * the other side pin to +5V
- * LED anode (long leg) attached to digital output 13
- * LED cathode (short leg) attached to ground
+Circuit that causes a piezo buzzer to sound when it is sufficiently dark in a room.
 
- * Note: because most Arduinos have a built-in LED attached
- to pin 13 on the board, the LED is optional.
+(c) 2015 Carlos de la Calleja
 
+Circuit:
+  - 10K Ohm resistor
+  - 10K Ohm resitor
+  - Photo resistor
+  - Piezo buzzer
 
- Created by David Cuartielles
- modified 30 Aug 2011
- By Tom Igoe
-
- This example code is in the public domain.
-
- http://arduino.cc/en/Tutorial/AnalogInput
-
- */
-
-int sensorPin = A0;    // select the input pin for the potentiometer
-int ledPin = 13;      // select the pin for the LED
-int sensorValue = 0;  // variable to store the value coming from the sensor
+int buzzerPin = 8;   // selet the input pin for the buzzer
+int photocellPin = A0;    // analog input pin for the photoresistor
+int photocellValue = 0;  //  value coming from the photocell
 
 void setup() {
-  // declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);  
+
+  Serial.begin(9600);  // use the serial input to debug the program
 }
 
 void loop() {
-  // read the value from the sensor:
-  sensorValue = analogRead(sensorPin);
-  // turn the ledPin on
-  Serial.println(sensorValue);
+  // read the value from the photocell:
+  photocellValue = analogRead(photocellPin); // read the value
+
+  Serial.println(sphotocellValue); // uart transmits the values to the serial monitor
   
-  if (sensorValue < 300) tone(8,1000);
-  else noTone(8);
+  if (photoCellrValue < 300) tone(buzzerPin,1000); //if there is no light then generate tone
+  else noTone(buzzerPin); // stop buzzer
   
-  
-  //digitalWrite(ledPin, HIGH);
-  // stop the program for <sensorValue> milliseconds:
-  //delay(sensorValue);
-  // turn the ledPin off:
-  //digitalWrite(ledPin, LOW);
-  // stop the program for for <sensorValue> milliseconds:
-  //delay(sensorValue);
 }
