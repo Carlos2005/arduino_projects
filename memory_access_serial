@@ -1,0 +1,67 @@
+
+// read and write memory through serial input
+
+#include <EEPROM.h>
+
+
+// setup varialbes
+char buff[20];
+char *ptr;
+int counter, numbytes;
+
+// the setup routine runs once when you press reset:
+
+void setup() {  							
+
+  Serial.begin(9600);  //set the serial port
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+  while (Serial.available() > 0) {   //check if data is incoming from the  serial monitor
+     numbytes =  Serial.available();
+     Serial.readbytes(buff,numbytes);
+     ptr=buff;
+     // parse serial input
+
+     if ((*prt) == 'r') digitalWrite(led, HIGH);
+     if (ByteReceived == '0') digitalWrite(led, LOW);
+  }  
+}
+void write(int i,3);{
+
+}
+
+int read(int i
+
+
+// Calculate based on max input size expected for one command
+#define INPUT_SIZE 30
+...
+
+// Get next command from Serial (add 1 for final 0)
+char input[INPUT_SIZE + 1];
+byte size = Serial.readBytes(input, INPUT_SIZE);
+// Add the final 0 to end the C string
+input[size] = 0;
+
+// Read each command pair 
+char* command = strtok(input, "&");
+while (command != 0)
+{
+    // Split the command in two values
+    char* separator = strchr(command, ':');
+    if (separator != 0)
+    {
+        // Actually split the string in 2: replace ':' with 0
+        *separator = 0;
+        int servoId = atoi(command);
+        ++separator;
+        int position = atoi(separator);
+
+        // Do something with servoId and position
+    }
+    // Find the next command in input string
+    command = strtok(0, "&");
+}
