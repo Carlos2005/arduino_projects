@@ -12,7 +12,7 @@ address 3 should be printed to the serial monitor.
 If the user types “write 3 10” then the value 10 should be written into 
 address 3 of the EEPROM
 
-(c) 2015 Carlos de la Calleja
+(c) 2020 Carlos de la Calleja
 
 */
 
